@@ -1,1 +1,1 @@
-# metu_homeworks
+# metu coding assignments
