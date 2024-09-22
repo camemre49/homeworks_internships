@@ -1,0 +1,2 @@
+Inode Pointer Fixed 100%
+New Difference Introduced 0

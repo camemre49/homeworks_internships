@@ -1,0 +1,2 @@
+all: main.cpp data_bitmap_handler.cpp directory_table_handler.cpp ext2fs.h global_vars.cpp identifier.cpp inode_bitmap_handler.cpp pointer-recovery-handler.cpp residual_file_content_handler.cpp write_handler.cpp
+	g++ -Wall -o recext2fs main.cpp data_bitmap_handler.cpp directory_table_handler.cpp ext2fs.cpp global_vars.cpp identifier.cpp inode_bitmap_handler.cpp pointer-recovery-handler.cpp residual_file_content_handler.cpp write_handler.cpp -I.

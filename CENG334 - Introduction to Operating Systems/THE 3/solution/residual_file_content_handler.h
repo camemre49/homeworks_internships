@@ -1,0 +1,6 @@
+#ifndef FILE_HW3_RESIDUAL_FILE_CONTENT_HANDLER_H
+#define FILE_HW3_RESIDUAL_FILE_CONTENT_HANDLER_H
+
+void recover_residual_file_content_blocks();
+
+#endif //FILE_HW3_RESIDUAL_FILE_CONTENT_HANDLER_H
