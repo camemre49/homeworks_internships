@@ -1,0 +1,1 @@
+diff (Multiplication (Addition (Constant 3) (Variable "t")) (Addition (Variable "t") (Constant 5))) (Variable "t")

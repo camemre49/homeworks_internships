@@ -1,0 +1,1 @@
+(searchTree '-' (Node "root" 'r' [Node "branch" 'b' [Node "leaf" 'l' [], Node "petal" 'p' []], Node "flower" 'f' [Node "trunk" 't' [], Node "wood" 'w' []]])) "petal"

@@ -1,0 +1,1 @@
+"sin (cos (Variable 'm' * Variable 'n') + cos (Variable 'p' * Variable 'q'))"

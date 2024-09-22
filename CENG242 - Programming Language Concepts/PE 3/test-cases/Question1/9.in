@@ -1,0 +1,1 @@
+show (Addition (Addition (Multiplication (Variable "a") (Variable "a")) (Multiplication (Multiplication (Constant 2) (Variable "a")) (Variable "b"))) (Multiplication (Variable "b") (Variable "b")))

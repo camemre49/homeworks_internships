@@ -1,0 +1,1 @@
+show (Negation (Variable "a"))

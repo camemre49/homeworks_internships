@@ -1,0 +1,1 @@
+Addition (Negation (Variable "x")) (Multiplication (Cosine (Variable "a")) (Sine (Constant 0))) == Addition (Negation (Variable "x")) (Multiplication (Cosine (Variable "b")) (Sine (Constant 0)))

@@ -1,0 +1,1 @@
+selectiveMap ((>4) . length) (const []) ["AAA", "BB", "CCCC", "DDDDDD", "E", "FFFFFF", "GGGG", "HHHHHHHHHH"]

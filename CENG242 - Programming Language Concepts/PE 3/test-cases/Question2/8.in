@@ -1,0 +1,1 @@
+Multiplication (Addition (Constant 5) (Constant 7)) (Addition (Multiplication (Negation (Variable "x")) (Negation (Constant 6))) (Constant 3)) == Multiplication (Addition (Constant 5) (Constant 7)) (Addition (Multiplication (Negation (Variable "x")) (Negation (Constant 6))) (Constant 3))

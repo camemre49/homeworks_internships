@@ -1,0 +1,1 @@
+Addition (Multiplication (Addition (Constant 0.0) (Constant 1.0)) (Addition (Variable "t") (Constant 5.0))) (Multiplication (Addition (Constant 3.0) (Variable "t")) (Addition (Constant 1.0) (Constant 0.0)))

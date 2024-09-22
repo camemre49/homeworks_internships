@@ -1,0 +1,1 @@
+(searchTree True (Node "T" True [Node "TT" True [Node "TTT" True [Node "TTTT" True [], Node "TTTF" False []], Node "TTF" False [Node "TTFT" True [], Node "TTFF" False []]], Node "TF" False [Node "TFT" True [Node "TFTT" True [], Node "TFTF" False []], Node "TFF" False [Node "TFFT" True [], Node "TFFF" False []]]])) "TTFF"

@@ -1,0 +1,1 @@
+show (Cosine (Variable "x"))

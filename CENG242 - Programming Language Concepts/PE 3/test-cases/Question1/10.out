@@ -1,0 +1,1 @@
+"((Variable 'x' + (Constant 11.0 * Variable 'y')) * ((sin Variable 'x' * cos Variable 'y') + (cos Variable 'x' * sin Variable 'y')))"

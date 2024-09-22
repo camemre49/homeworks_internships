@@ -1,0 +1,1 @@
+Negation (Addition (Addition (Multiplication (Constant 0.0) (Variable "b")) (Multiplication (Constant 3.0) (Constant 0.0))) (Addition (Addition (Multiplication (Constant 1.0) (Variable "a")) (Multiplication (Variable "a") (Constant 1.0))) (Constant 1.0)))

@@ -1,0 +1,1 @@
+"(((Variable 'a' * Variable 'a') + ((Constant 2.0 * Variable 'a') * Variable 'b')) + (Variable 'b' * Variable 'b'))"

@@ -1,0 +1,1 @@
+diff (Multiplication (Addition (Variable "x") (Sine (Variable "x"))) (Addition (Variable "y") (Sine (Variable "y")))) (Variable "y")

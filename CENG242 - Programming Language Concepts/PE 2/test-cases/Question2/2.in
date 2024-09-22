@@ -1,0 +1,1 @@
+tSelectiveMap (>5) (\x -> [head x]) (Node 6 "Hollow" [Node 3 "Burrow" [], Node (-2) "Madrid" [], Node 9 "Red" [], Node 0 "Computer" []])

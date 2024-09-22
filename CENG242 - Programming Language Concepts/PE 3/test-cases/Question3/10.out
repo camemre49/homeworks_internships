@@ -1,0 +1,1 @@
+Addition (Multiplication (Variable "u") (Variable "v")) (Negation (Multiplication (Variable "v") (Variable "du")))

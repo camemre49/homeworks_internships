@@ -1,0 +1,9 @@
+Not a DFA
+(q0, abaabababb) :- (q1, baabababb) :- (q2, aabababb) :- (q0, abababb) :- (q1, bababb) :- (q0, ababb) :- (q1, babb) :- (q0, abb) :- (q1, bb) :- (q2, b)
+Reject
+(q0, abaabab) :- (q1, baabab) :- (q2, aabab) :- (q0, abab) :- (q1, bab) :- (q0, ab) :- (q1, b) :- (q0, e)
+Accept
+(q0, abaababaaa) :- (q1, baababaaa) :- (q2, aababaaa) :- (q0, ababaaa) :- (q1, babaaa) :- (q0, abaaa) :- (q1, baaa) :- (q2, aaa) :- (q0, aa) :- (q1, a)
+Reject
+(q0, abaababa) :- (q1, baababa) :- (q2, aababa) :- (q0, ababa) :- (q1, baba) :- (q0, aba) :- (q1, ba) :- (q2, a) :- (q0, e)
+Accept

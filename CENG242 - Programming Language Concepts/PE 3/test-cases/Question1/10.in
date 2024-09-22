@@ -1,0 +1,1 @@
+show (Multiplication (Addition (Variable "x") (Multiplication (Constant 11) (Variable "y"))) (Addition (Multiplication (Sine (Variable "x")) (Cosine (Variable "y"))) (Multiplication (Cosine (Variable "x")) (Sine (Variable "y")))))

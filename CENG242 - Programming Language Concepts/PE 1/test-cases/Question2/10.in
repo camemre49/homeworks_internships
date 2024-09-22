@@ -1,0 +1,1 @@
+findInMatrix [["tea", "cup"], ["red", "hat"]] [["sea", "bee", "hop", "mat"], ["tea", "pop", "rat", "map"], ["cup", "cat", "mad", "hat"], ["sat", "red", "pat", "pet"]]

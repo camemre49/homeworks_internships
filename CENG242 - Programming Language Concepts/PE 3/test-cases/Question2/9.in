@@ -1,0 +1,1 @@
+Negation (Multiplication (Multiplication (Multiplication (Variable "x") (Variable "y")) (Addition (Constant 47) (Constant 19))) (Constant 3)) == Multiplication (Multiplication (Multiplication (Variable "x") (Variable "y")) (Addition (Constant 47) (Constant 19))) (Constant 3)

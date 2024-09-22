@@ -1,0 +1,1 @@
+diff (Negation (Addition (Multiplication (Constant 3) (Variable "b")) (Addition (Multiplication (Variable "a") (Variable "a")) (Variable "a")))) (Variable "a")

@@ -1,0 +1,8 @@
+(q10, a) :- (s, e)
+Accept
+(q10, ababababa) :- (s, babababa) :- (q10, abababa) :- (s, bababa) :- (q10, ababa) :- (s, baba) :- (q10, aba) :- (s, ba) :- (q10, a) :- (s, e)
+Accept
+(q10, aa) :- (s, a) :- (q2, e)
+Reject
+(q10, ababab) :- (s, babab) :- (q10, abab) :- (s, bab) :- (q10, ab) :- (s, b) :- (q10, e)
+Reject

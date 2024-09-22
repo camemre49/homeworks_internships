@@ -1,0 +1,1 @@
+tSelectiveMappingFold (>0) (\k v->v) (++) "" (Node 1 "Land" [Node (-1) "Sea" [Node (-1) "Ocean" [], Node 1 "Island" [], Node (-1) "Plateau" [], Node (-1) "Mountain" []], Node 1 "River" [Node 1 "Hill" [], Node (-1) "Lake" [], Node (-1) "Pond" [], Node 1 "Cave" [], Node 3 "Stream" []]])

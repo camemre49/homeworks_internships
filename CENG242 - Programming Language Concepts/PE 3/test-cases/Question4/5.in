@@ -1,0 +1,1 @@
+diff (Addition (Variable "a") (Cosine (Variable "a"))) (Variable "a")

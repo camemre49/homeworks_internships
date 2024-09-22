@@ -1,0 +1,1 @@
+tSelectiveMap even (const "EVEN") (Node 1 "Hello" [Node (-3) "Tone" [Node 4 "Old" [], Node 2 "Ready" [], Node 3 "Sold" []], Node 0 "Burnt" [Node (-1) "Gold" [], Node 9 "Otter" [], Node 12 "Butter" [], Node 1 "Jump" [], Node (-1) "Shrimp" []]])

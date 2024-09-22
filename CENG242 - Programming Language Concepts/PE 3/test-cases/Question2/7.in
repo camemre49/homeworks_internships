@@ -1,0 +1,1 @@
+Multiplication (Addition (Variable "x") (Constant 12)) (Addition (Variable "x") (Constant 3)) == Multiplication (Addition (Variable "x") (Constant 4)) (Addition (Variable "x") (Constant 9))

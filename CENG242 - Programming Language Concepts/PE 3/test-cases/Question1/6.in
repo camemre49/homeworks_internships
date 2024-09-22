@@ -1,0 +1,1 @@
+show (Multiplication (Sine (Negation (Variable "N"))) (Addition (Constant 20) (Sine (Variable "M"))))

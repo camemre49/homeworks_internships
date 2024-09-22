@@ -1,0 +1,1 @@
+tSelectiveMap ((<5) . length) (const 0) (Node "Hello" 3 [Node "Cold" 9 [Node "Carrot" 16 [], Node "River" 21 [Node "Ant" (-2) []], Node "Code" 5 []], Node "World" 2 [Node "Common" 14 []], Node "Egg" (-11) [Node "Yawn" 1 [], Node "Yummy" (-1) []]])

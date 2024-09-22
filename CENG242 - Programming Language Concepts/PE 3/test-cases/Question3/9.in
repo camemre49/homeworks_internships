@@ -1,0 +1,1 @@
+Cosine 3 * (Sine 1 + Constant 3 * Sine 2 + Constant 1 * Sine 3 + Constant 0 * Sine 4)

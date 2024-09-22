@@ -1,0 +1,1 @@
+tSelectiveMappingFold (=="Show") (\k v -> ((++" ") . show) v) (++) "" (Node "Hide" (-7) [Node "Show" 11 [], Node "Hide" 4 [Node "Show" 17 [], Node "Hide" 5 [], Node "Show" 25 [], Node "Hide" 15 []]])

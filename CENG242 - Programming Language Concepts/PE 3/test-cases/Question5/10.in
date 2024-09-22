@@ -1,0 +1,1 @@
+shuntingyard (words "( a * a * a + 3 * a * a * b + 3 * b * b * a + b * b * b ) * ( sin x + cos x + sin x * cos x ) * ( - c + - c * d + - d * d + - d ) * ( a * sin a + b * sin b + c * sin c + d * sin d + x * cos c + y * cos y )") [] []

@@ -1,0 +1,1 @@
+(tSelectiveMappingFold (=="Apply") (\k v -> v) (.) id (Node "Ignore" (*2) [Node "Apply" (+4) [Node "Apply" (+(-3)) [], Node "Ignore" (*5) [Node "Apply" (+7) []]], Node "Apply" (*3) [Node "Ignore" (*12) [Node "Ignore" (*0) []], Node "Apply" (+(-11)) []]])) 19

@@ -1,0 +1,8 @@
+(q0, baabbabb) :- (q1, aabbabb) :- (q0, abbabb) :- (q0, bbabb) :- (q1, babb) :- (q2, abb) :- (q0, bb) :- (q1, b) :- (q2, e)
+Accept
+(q0, bbbaa) :- (q1, bbaa) :- (q2, baa) :- (q3, aa) :- (q3, a) :- (q3, e)
+Reject
+(q0, aabbbab) :- (q0, abbbab) :- (q0, bbbab) :- (q1, bbab) :- (q2, bab) :- (q3, ab) :- (q3, b) :- (q3, e)
+Reject
+(q0, bababaaabb) :- (q1, ababaaabb) :- (q0, babaaabb) :- (q1, abaaabb) :- (q0, baaabb) :- (q1, aaabb) :- (q0, aabb) :- (q0, abb) :- (q0, bb) :- (q1, b) :- (q2, e)
+Accept

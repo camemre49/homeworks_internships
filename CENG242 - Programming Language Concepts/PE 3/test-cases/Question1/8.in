@@ -1,0 +1,1 @@
+show (Addition (Addition (Addition (Constant 3) (Variable "x")) (Variable "y")) (Variable "z"))

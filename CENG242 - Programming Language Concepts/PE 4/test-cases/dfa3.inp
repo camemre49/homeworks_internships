@@ -1,0 +1,12 @@
+a b
+s q10 q2 q3
+q10
+s
+q10 a s
+q10 b q3
+s a q2
+s b q10
+q2 a q3
+q2 b q3
+q3 a q3
+q3 b q3

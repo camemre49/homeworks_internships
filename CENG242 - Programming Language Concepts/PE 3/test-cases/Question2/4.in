@@ -1,0 +1,1 @@
+Addition (Multiplication (Constant 3) (Variable "t")) (Constant 1) == Addition (Multiplication (Constant 1) (Variable "t")) (Constant 3)

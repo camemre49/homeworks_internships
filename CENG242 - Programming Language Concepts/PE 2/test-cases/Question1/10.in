@@ -1,0 +1,1 @@
+map (\f -> f 6) (selectiveMap (const True) ((+4) .) [(*2), (12+), (`mod` 7), (3*), (16 `mod`), (\x->x*x+x)])

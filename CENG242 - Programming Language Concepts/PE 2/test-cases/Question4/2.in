@@ -1,0 +1,1 @@
+(searchTree "" (Node 7 "Star" [Node 1 "Lava" [Node 11 "Sun" [Node 26 "Dawn" []], Node (-2) "Dusk" [], Node (-6) "Bright" [], Node 14 "Moon" [], Node (-1) "Night" [Node 8 "Meteor" []]]])) 12

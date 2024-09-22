@@ -1,0 +1,1 @@
+(searchTree 0 (Node "positive" 10 [Node "negative" (-10) [Node "triple" 30 [], Node "squared" 100 []], Node "double" 20 [Node "cubed" 1000 []]])) "double"

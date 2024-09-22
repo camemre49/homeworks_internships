@@ -1,0 +1,1 @@
+tSelectiveMappingFold ((/=0) . (`mod` 3)) (\x y -> y) (++) "" (Node 7 "Hello" [Node 3 "Hi" [], Node 4 "Later" [], Node 2 "Greetings" [], Node 5 "Bye" [], Node 2 "Farewell" [], Node 6 "Welcome" []])

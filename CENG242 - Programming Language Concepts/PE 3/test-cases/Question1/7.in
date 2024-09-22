@@ -1,0 +1,1 @@
+show (Sine (Addition (Cosine (Multiplication (Variable "m") (Variable "n"))) (Cosine (Multiplication (Variable "p") (Variable "q")))))

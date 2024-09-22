@@ -1,0 +1,1 @@
+selectiveMap ((<4) . (`mod` 8) . length) (\x -> [head x]) ["How", "much", "wood", "would", "a", "woodchuck", "chuck", "if", "a", "woodchuck", "could", "chuck", "wood?"]

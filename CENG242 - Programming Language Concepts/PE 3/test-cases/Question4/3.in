@@ -1,0 +1,1 @@
+diff (Addition (Multiplication (Variable "x") (Constant 2)) (Multiplication (Variable "x") (Variable "x"))) (Variable "x")

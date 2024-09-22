@@ -1,0 +1,1 @@
+"(sin -Variable 'N' * (Constant 20.0 + sin Variable 'M'))"

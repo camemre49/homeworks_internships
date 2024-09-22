@@ -1,0 +1,1 @@
+(Variable "a" * Constant 0) + (Variable "c" * Constant 1)

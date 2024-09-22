@@ -1,0 +1,1 @@
+findInList ["such", "a", "great", "day"] ["such", "mistakes", "would", "cause", "a", "great", "delay", "in", "our", "day", "to", "day", "affairs"]

@@ -1,0 +1,1 @@
+findInList ["star"] ["meteor", "planet", "star", "light", "star", "orbit", "star"]

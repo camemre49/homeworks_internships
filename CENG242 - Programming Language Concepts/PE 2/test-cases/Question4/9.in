@@ -1,0 +1,1 @@
+(searchTree "" (Node [1,2,3] "Ascending" [Node [1,1,2,3,5,8] "Fibonacci" [Node [8,7,6,5] "Descending" [Node [2,4,8,16] "Doubled" [], Node [1,2,4,9,16] "Squares" []], Node [2,3,5,7] "Primes" []]])) [2,3,5,7]

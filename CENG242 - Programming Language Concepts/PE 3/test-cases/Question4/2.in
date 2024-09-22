@@ -1,0 +1,1 @@
+diff (Addition (Negation (Variable "t")) (Constant 12)) (Variable "t")

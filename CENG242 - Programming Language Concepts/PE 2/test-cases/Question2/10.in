@@ -1,0 +1,1 @@
+tSelectiveMap ((==5) . length) (map (^2)) (Node "Ahmet" [8,2,56,7,3] [Node "Ali" [3,7,1] [Node "Fatma" [1,2,3,4,12] []], Node "Mehmet" [] [], Node "Aysel" [-1, 1, 4 ,7 ,12] []])

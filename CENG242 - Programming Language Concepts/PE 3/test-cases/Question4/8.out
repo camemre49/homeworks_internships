@@ -1,0 +1,1 @@
+Addition (Multiplication (Addition (Constant 0.0) (Multiplication (Cosine (Variable "x")) (Constant 0.0))) (Addition (Variable "y") (Sine (Variable "y")))) (Multiplication (Addition (Variable "x") (Sine (Variable "x"))) (Addition (Constant 1.0) (Multiplication (Cosine (Variable "y")) (Constant 1.0))))
