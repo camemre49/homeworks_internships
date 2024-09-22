@@ -1,0 +1,67 @@
+<div class="container-fluid" >
+
+  <div class="container mt-5">
+    <div class="card" style="margin: 0">
+      <div class="card-body">
+        <form (ngSubmit)="updateUser()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control" placeholder="Your Username" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Your Password" />
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" [(ngModel)]="name" class="form-control" placeholder="Your Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" id="surname" [(ngModel)]="surname" class="form-control" placeholder="Your Surname" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Eg: example@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" [(ngModel)]="city" class="form-control" placeholder="Your City" />
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender" [(ngModel)]="gender" class="form-select" style="width: 80%">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="admin">Is the user will be admin? (Default: No)</label>
+              <select name="admin" id="admin" [(ngModel)]="admin" class="form-select" style="width: 80%">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate">Date of Birth</label>
+            <input type="date" name="birthDate" id="birthDate" [(ngModel)]="birthDate" class="form-control" style="width: 30%" />
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

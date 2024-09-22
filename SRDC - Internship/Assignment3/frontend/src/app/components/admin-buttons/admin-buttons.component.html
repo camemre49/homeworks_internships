@@ -1,0 +1,37 @@
+<div class="container-fluid" style="width: 1000px; height: 600px">
+  <div style="text-align: center">
+    <h1 class="display-4" style="color: midnightblue; text-shadow: 2px 2px 2px; font-size: 70px"> <b>Main Menu</b> </h1>
+  </div>
+  <div *ngIf="loginSuccessful" style="margin-left: 60px; margin-top: 25px">
+    <app-button text="List Users"
+                routerLinkActive="active"
+                routerLink="/list-users"
+                *ngIf="admin"></app-button>
+
+    <app-button text="Add User"
+                routerLinkActive="active"
+                routerLink="/user-update"
+                *ngIf="admin"></app-button>
+
+    <app-button text="Send Message"
+                routerLinkActive="active"
+                routerLink="/send-message"
+    ></app-button>
+    <app-button  text="Inbox"
+                 routerLinkActive="active"
+                 routerLink="/list-message"
+                 (btnClick)="inbox()"></app-button>
+    <app-button  text="Outbox"
+                 routerLinkActive="active"
+                 routerLink="/list-message"
+                 (btnClick)="outbox()"></app-button>
+    <app-button  text="Log list"
+                 routerLinkActive="active"
+                 routerLink="/log-list"
+    ></app-button>
+    <app-button  text="Logout"
+                 (btnClick)="logout()"></app-button>
+  </div>
+
+
+</div>

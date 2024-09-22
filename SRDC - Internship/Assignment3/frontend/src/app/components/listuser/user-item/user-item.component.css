@@ -1,0 +1,98 @@
+.user{
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: help;
+  border-radius: 10px;
+}
+
+.info{
+  background: beige;
+  margin: 5px;
+  padding: 5px 10px;
+
+}
+
+.icon-delete {
+  font-size: 24px; /* Adjust the size as needed */
+  color: red;
+  cursor: pointer;
+}
+
+.icon-cog {
+  font-size: 30px; /* Adjust the size as needed */
+  color: saddlebrown;
+  cursor: pointer;
+}
+
+
+.input-row {
+  display: flex;
+}
+
+
+.input-half {
+  margin-left: 20px;
+  margin-right: 5px;
+  min-width: 0;
+}
+
+.right-half {
+  margin-left: auto;
+}
+
+
+.form-control-small {
+  margin: 20px 0;
+}
+
+.form-control-small {
+  margin: 10px 0;
+}
+
+.form-control-small label {
+  display: block;
+}
+
+.form-control-small input {
+  height: 30px;
+  width: 200px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 14px;
+  border-color: dimgray;
+
+}
+
+.form-control-check-small {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check-small label {
+  flex: 1;
+}
+
+.form-control-check-small input {
+  flex: 2;
+  height: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.icons-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Add margin to the icons to separate them from the username */
+.icon-cog,
+.icon-delete {
+  margin-left: 10px;
+}

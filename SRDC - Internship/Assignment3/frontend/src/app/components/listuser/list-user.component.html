@@ -1,0 +1,116 @@
+<div class="container-fluid" style="width: 1000px;">
+
+  <div class="container" style="border: 2px solid whitesmoke; margin-bottom: 20px" >
+    <nav aria-label="Page navigation example" style="margin-top: 20px">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" style="cursor: pointer;">
+          <a class="page-link" [class.disabled]="this.currentPage === 0" (click)="goPrev()">Previous</a>
+        </li>
+        <li *ngFor="let item of [].constructor(this.totalPages); let i = index" class="page-item" [class.disabled]="this.currentPage === (i)" (click)="goPage(i)"  style="cursor: pointer;">
+          <a class="page-link">{{i + 1}}</a>
+        </li>
+        <li class="page-item" style="cursor: pointer;">
+          <a class="page-link" [class.disabled]="this.currentPage === (this.totalPages - 1)" (click)="goNext()">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="onSwitchChange($event)"/>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Show User information</label>
+      </div>
+
+      <div style="display: flex; align-items: end;">
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox1" (change)="onCheckBox($event, 0)" checked>
+          <label class="form-check-label" for="checkbox1">Username</label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox4" (change)="onCheckBox($event, 1)" checked>
+          <label class="form-check-label" for="checkbox1">E mail</label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox2" (change)="onCheckBox($event, 2)" checked>
+          <label class="form-check-label" for="checkbox2">Name</label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox3" (change)="onCheckBox($event, 3)" checked>
+          <label class="form-check-label" for="checkbox1">Surname</label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox5" (change)="onCheckBox($event, 4)" checked>
+          <label class="form-check-label" for="checkbox1">Gender<br></label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox6" (change)="onCheckBox($event, 5)" checked>
+          <label class="form-check-label" for="checkbox1">City<br></label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox7" (change)="onCheckBox($event, 6)" checked>
+          <label class="form-check-label" for="checkbox1">Birthdate<br></label>
+        </div>
+        <div class="form-check mx-3">
+          <input class="form-check-input" type="checkbox" id="checkbox8" (change)="onCheckBox($event, 7)" checked>
+          <label class="form-check-label" for="checkbox1">Admin<br></label>
+        </div>
+      </div>
+    </div>
+
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th (click)="sortBy('username')" class="sortable-column">
+          Username
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'username' && sortDirection, 'down': sortByField === 'username' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('email')" class="sortable-column">
+          Email
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'email' && sortDirection, 'down': sortByField === 'email' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('name')" class="sortable-column">
+          Name
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'name' && sortDirection, 'down': sortByField === 'name' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('surname')" class="sortable-column">
+          Surname
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'surname' && sortDirection, 'down': sortByField === 'surname' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('city')" class="sortable-column">
+          City
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'city' && sortDirection, 'down': sortByField === 'city' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('birthdate')" class="sortable-column">
+          Birthdate
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'dateOfBirth' && sortDirection, 'down': sortByField === 'dateOfBirth' && !sortDirection }"></span>
+        </th>
+      </tr>
+      </thead>
+    </table>
+
+    <div class="row mb-3 justify-content-start" >
+      <div class="col-md-6 d-flex">
+        <div class="form-group">
+          <label for="pageLimit">Page Limit:</label>
+          <input type="number" class="form-control form-control-sm" id="pageLimit" style="width: 100px" [(ngModel)]="pageLimit">
+        </div>
+        <button class="btn btn-primary custom-refresh-btn" (click)="onRefresh()">
+          <fa-icon [icon]="faRefresh" class="icon-delete"></fa-icon>
+          Refresh
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <app-user-item *ngFor="let user of users, let i = index"
+                 [user] ="user"
+                 [showInfo] = this.showUserInfo
+                 [showFields]="checkboxValues"
+                 [head]="sortByField ? sortByField : 'username'"
+                 (deleteClick)="deleteUser(user.username, i)">
+  </app-user-item>
+
+
+</div>

@@ -1,0 +1,11 @@
+.custom-refresh-btn {
+  font-size: 10px;
+  padding: 3px 8px;
+  height: 40px;
+  width: 80px;
+}
+.selected-row {
+  font-weight: bold;
+  font-size: larger;
+  color: green;
+}

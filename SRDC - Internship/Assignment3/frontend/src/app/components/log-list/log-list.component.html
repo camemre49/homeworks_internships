@@ -1,0 +1,78 @@
+<div class="container-fluid" style="width: 1500px">
+  <nav aria-label="Page navigation example" style="margin-top: 20px">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" style="cursor: pointer;">
+        <a class="page-link" [class.disabled]="currentPage === 0" (click)="goPrev()">Previous</a>
+      </li>
+      <li *ngFor="let item of [].constructor(totalPages); let i = index" class="page-item" [class.disabled]="currentPage === (i)" (click)="goPage(i)" style="cursor: pointer;">
+        <a class="page-link">{{i + 1}}</a>
+      </li>
+      <li class="page-item" style="cursor: pointer;">
+        <a class="page-link" [class.disabled]="currentPage === totalPages - 1" (click)="goNext()">Next</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="row mb-3 justify-content-start" >
+      <div class="col-md-6 d-flex">
+        <div class="form-group">
+          <label for="findParameter">Search by Username:</label>
+          <input type="text" class="form-control form-control-sm" id="findParameter" [(ngModel)]="findParameter">
+        </div>
+        <button class="btn btn-primary custom-refresh-btn"  style="width: 100px; height: 45px" (click)="search()">
+          <fa-icon [icon]="faSearch" class="icon-delete"></fa-icon>
+          Find
+        </button>
+      </div>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th (click)="sortBy('userId')" class="sortable-column">
+          User Id
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'userId' && sortDirection, 'down': sortByField === 'userId' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('username')" class="sortable-column">
+          Username
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'username' && sortDirection, 'down': sortByField === 'username' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('userIp')" class="sortable-column">
+          User Ip
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'userIp' && sortDirection, 'down': sortByField === 'userIp' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('method')" class="sortable-column" style="width: 8%;">
+          Method
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'method' && sortDirection, 'down': sortByField === 'method' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('route')" class="sortable-column">
+          Route
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'route' && sortDirection, 'down': sortByField === 'route' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('responseStatus')" class="sortable-column" style="width: 6%">
+          Res
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'responseStatus' && sortDirection, 'down': sortByField === 'responseStatus' && !sortDirection }"></span>
+        </th>
+        <th (click)="sortBy('date')" class="sortable-column" style="width: 20%">
+          Date
+          <span class="sort-icon" [ngClass]="{ 'up': sortByField === 'date' && sortDirection, 'down': sortByField === 'date' && !sortDirection }"></span>
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{ log.userId }}</td>
+        <td>{{ log.username }}</td>
+        <td>{{ log.userIp }}</td>
+        <td>{{ log.method }}</td>
+        <td>{{ log.route }}</td>
+        <td>{{ log.responseStatus }}</td>
+        <td>{{ log.date.toString().substring(0, log.date.toString().indexOf("T")) + "  " +  log.date.toString().substring(log.date.toString().indexOf("T")+1, log.date.toString().indexOf("."))}}</td>
+      </tr>
+      </tbody>
+
+    </table>
+
+</div>
+</div>

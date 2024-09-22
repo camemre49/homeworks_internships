@@ -1,0 +1,19 @@
+<form *ngIf="!loginSuccessful"
+      (ngSubmit)="onLogin()">
+  <br>
+  <h1 class="text-center mb-4" style="text-shadow: 1px 1px 1px black; "> <b>WELCOME</b></h1>
+  <div class="form-control" style="border: white solid">
+    <label for="username" class="form-label"> <b>Username:</b> </label>
+    <input type="text" name="username" id="username" [(ngModel)]="username"  placeholder="Your Username" />
+  </div>
+  <div class="form-control" style="border: white solid">
+    <label for="password"> <b>Password:</b> </label>
+    <input type="password" name="password" id="password" [(ngModel)]="password"  placeholder="Your Password" >
+  </div>
+
+  <div style="text-align: center">
+    <input  type="submit" value="Login" class ="btn btn-primary">
+  </div>
+
+</form>
+

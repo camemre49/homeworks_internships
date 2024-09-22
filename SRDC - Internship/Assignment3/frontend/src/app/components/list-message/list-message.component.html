@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="container-md  justify-content-center" style="border: 1px transparent; margin-top: 10px" *ngIf="messageContent">
+      <table class="table message-table table-info table-bordered">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 15%">
+            {{inOrOut === "inbox" ? "From" : "To"}}  <br> {{inOrOut === "inbox" ? messageContent.sender : messageContent.receiver}}
+          </th>
+          <th scope="col" style="width: 40%">
+            Title: <br> {{messageContent.title}}
+          </th>
+          <th scope="col">Date: <br> {{getLocalDate(messageContent.date.toString())}}</th>
+          <th scope="col">
+            Time: <br> {{getLocalTime(messageContent.date.toString())}}
+          </th>
+          <th>
+            <fa-icon [icon]="faTrash" style="color: red; cursor:pointer; font-size: 30px" (click)="onDelete(messageContent._id)"></fa-icon>
+          </th>
+        </tr>
+        </thead>
+      </table>
+      <div class="card" style="margin-bottom: 10px">
+        <p class="card-text" style="margin: 4px">
+          {{messageContent.message}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <button *ngIf="messageContent" class="btn btn-primary justify-content-end" style="width: 70px; height: 30px; font-size: 10px; margin: 2px 2px 2px 920px;" (click)="messageContent = null ">
+    Close
+  </button>
+
+
+  <nav aria-label="Page navigation example" style="margin-top: 20px">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" style="cursor: pointer;">
+        <a class="page-link" [class.disabled]="currentPage === 0" (click)="pagePrev()">Previous</a>
+      </li>
+      <li *ngFor="let item of [].constructor(totalPages); let i = index" class="page-item" [class.disabled]="currentPage === (i)" (click)="goPage(i)" style="cursor: pointer;">
+        <a class="page-link">{{i + 1}}</a>
+      </li>
+      <li class="page-item" style="cursor: pointer;">
+        <a class="page-link" [class.disabled]="currentPage === (totalPages - 1)" (click)="pageNext()">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="row mb-3 justify-content-start" >
+      <div class="col-md-6 d-flex">
+        <div class="form-group">
+          <label for="pageLimit">Page Limit:</label>
+          <input type="number" class="form-control form-control-sm" id="pageLimit" style="width: 100px" [(ngModel)]="pageLimit">
+        </div>
+        <button class="btn btn-primary custom-refresh-btn" (click)="onRefresh()">
+          <fa-icon [icon]="faRefresh" class="icon-delete"></fa-icon>
+          Refresh
+        </button>
+      </div>
+    </div>
+    <table class="table message-table table-hover table-bordered ">
+      <thead class="thead-dark">
+      <tr >
+        <th scope="col" style="width: 20%">
+          {{inOrOut === "inbox" ? "From" : "To"}}
+          <fa-icon [icon]="faSortUp" style="font-size: 22px; cursor:pointer;" (click)="sort(inOrOut === 'inbox' ? 'sender' : 'receiver',1 )"></fa-icon>
+          <fa-icon [icon]="faSortDown" style="font-size: 22px; cursor:pointer;" (click)="sort(inOrOut === 'inbox' ? 'sender' : 'receiver',-1 )"></fa-icon>
+        </th>
+        <th scope="col" style="width: 50%">
+          Title
+          <fa-icon [icon]="faSortUp" style="font-size: 22px; cursor:pointer;" (click)="sort('title',1 )"></fa-icon>
+          <fa-icon [icon]="faSortDown" style="font-size: 22px; cursor:pointer;" (click)="sort('title',-1 )"></fa-icon>
+        </th>
+        <th scope="col">Date</th>
+        <th scope="col">
+          Time
+          <fa-icon [icon]="faSortUp" style="font-size: 22px; cursor:pointer;" (click)="sort('date',1 )"></fa-icon>
+          <fa-icon [icon]="faSortDown" style="font-size: 22px; cursor:pointer;" (click)="sort('date',-1 )"></fa-icon>
+        </th>
+        <th scope="col" style="width: 10px;">Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let message of messages let i = index"  [class.selected-row]="isSelected(message._id)"  (dblclick)="showMessage(message)">
+        <td class="sender">{{inOrOut === "inbox" ? message.sender : message.receiver}}</td>
+        <td class="title">{{message.title}}</td>
+        <td class="date">{{getLocalDate(message.date.toString())}}</td>
+        <td class="date">{{getLocalTime(message.date.toString())}}</td>
+        <td>
+          <fa-icon [icon]="faTrash" style="color: red; cursor:pointer;" (click)="onDelete(message._id)"></fa-icon>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card"><div class="container-md  justify-content-center" style="border: 1px transparent">
+  </div>
+  </div>
+
+
+</div>

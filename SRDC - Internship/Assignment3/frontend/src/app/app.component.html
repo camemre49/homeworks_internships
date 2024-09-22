@@ -1,0 +1,29 @@
+
+
+<div *ngIf="loginSuccessful" style="margin-left: 1100px">
+  <app-button  text="Turn menu"
+              (btnClick)="turnMenu()"
+              routerLinkActive="active"
+              routerLink=""></app-button>
+</div>
+
+<div *ngIf="!loginSuccessful" style="margin-top: 100px">
+
+</div>
+
+<div class="container-fluid" *ngIf="!loginSuccessful" style="width: 600px; height: 490px; position:relative;">
+  <app-login></app-login>
+</div>
+<div *ngIf="loginSuccessful">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="form-label">
+  <p style="text-align: center"> Client Server <br>
+    Click to learn more</p>
+</div>
+
+
+
+
+

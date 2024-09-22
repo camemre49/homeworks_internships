@@ -1,0 +1,23 @@
+h1 {
+  font-family: "Arial Rounded MT Bold", serif;
+  text-align: center;
+  font-size: xxx-large;
+}
+
+fa-icon{
+  margin-left: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+
+
+

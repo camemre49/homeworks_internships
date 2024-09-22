@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f1ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none; /* Remove the default bullet */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin-left: 15px;
+            margin-top: 15px;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            margin-left: 20px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 5px;
+            margin-left: 20px;
+        }
+
+        th{
+            color:#fff;
+        }
+
+        #loginScreen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2f2f2;
+        }
+
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px;
+            border-radius: 100px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: #e6f1ff;
+        }
+        #loginForm input[type="text"],
+        #loginForm input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 500px; /* Adjust the width as desired */
+            border: 3px solid #333333;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<h1 id="username" style="margin-left: 20px;"></h1>
+
+<h4 id="buttonmenu" style="margin-left: 20px;"> You can select your action by pressing the buttons.</h4>
+
+<div id="Top">
+
+</div>
+
+<div id="loginScreen">
+    <h1 style="text-align: center;">Welcome to the server</h1>
+<form id="loginForm", style="align-items: center;">
+    <h1 style="font-size: 30px; margin-bottom: 5px", >Username:</h1> <input type="text" name="username" required><br>
+    <h1 style="font-size: 30px; margin-bottom: 5px">Password:</h1> <input type="password" name="password"><br><br>
+    <input type="button" class="button" onclick="loginFunction()" value="Login">
+</form>
+</div>
+
+<div id="AdminButtons">
+    <form id="Addinout">
+        <input class = "button" type="button" onclick="sendMessageUserScreen(true)" value="Send Message">
+        <input class = "button" type="button" onclick="deleteMessageScreen(true)" value="Delete Message">
+        <input class = "button" type="button" onclick="inbox(true)" value="Inbox">
+        <input class = "button" type="button" onclick="inbox(false)" value="Outbox"> <br><br> <br>
+        <input class = "button" type="button" onclick="getUsers()" value="List all users">
+        <input class = "button" type="button" onclick="addUserScreen()" value="Add a new User">
+        <input class = "button" type="button" onclick="removeUserScreen()" value="Remove a user">
+        <input class = "button" type="button" onclick="updateUserScreen()" value="Update User"> <br><br><br><br>
+        <input  class = "button" id= "logoutAdmin" type="button" onclick="logout()" value="Logout">
+    </form>
+</div>
+
+<div id="UserButtons">
+    <form id="userB">
+        <input type="button" class = "button" onclick="sendMessageUserScreen(false)" value="Send Message">
+        <input type="button" class = "button" onclick="deleteMessageScreen(false)" value="Delete Message">
+        <input type="button" class = "button" onclick="inbox(true)" value="Inbox">
+        <input type="button" class = "button" onclick="inbox(false)" value="Outbox"> <br> <br>
+        <input id= "logoutUser" class = "button" type="button" onclick="logout()" value="Logout">
+    </form>
+</div>
+
+<div id="AddUserScreen">
+    <h4> Fill the information of the user. (Gender, birthdate and admin fields is necessary.)</h4>
+    <br>
+    <form id="AddUser">
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        Name: <input type="text" name="name"><br>
+        Surname: <input type="text" name="surname"><br>
+        Gender: <br>
+        Male: <input type="radio" id="male" name="gender" value="M">
+        Female: <input type="radio" id="female" name="gender" value="F"> <br> <br>
+        E-mail: <input type="email" name="email" required><br>
+        City: <input type="text" name="city"><br>
+        Date of Birth: <input type="date" id="birthdayAdd" name="birthday"> <br>
+        Admin: <br>
+        Yes: <input type="radio" id="true" name="admin" value="yes">
+        No:  <input type="radio" id="false" name="admin" value="no"> <br> <br>
+        <input id= "addusersubmit" class = "button" type="button" onclick="addUser()" value="Submit"> <br> <br>
+        <input id= "turnmenu1" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu"> <br> <br>
+    </form>
+</div>
+
+<div id="UpdateUser">
+    <h4> Fill the information of the user. You can see the current information of the user at the top. (Gender, birthdate and admin fields is necessary.)</h4>
+    <br>
+    <form id="Update">
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        Name: <input type="text" name="name"><br>
+        Surname: <input type="text" name="surname"><br>
+        Gender:<br>
+        Male: <input type="radio"  name="genderUpdate" value="M">
+        Female: <input type="radio"  name="genderUpdate" value="F"> <br>
+        E-mail: <input type="email" name="email" required><br>
+        City: <input type="text" name="city"><br>
+        Date of Birth: <input type="date"  name="birthday" id="birthdayUpdate"> <br>
+        Admin: <br>
+        Yes: <input type="radio" name="adminUpdate" value="yes">
+        No:  <input type="radio"  name="adminUpdate" value="no"> <br>
+        <input id= "updateusersubmit" class = "button" type="button" onclick="update()" value="Submit"> <br> <br>
+        <input id= "turnmenu4" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="RemoveUserScreen">
+    <h4>Write the username of the account that you want to delete.</h4>
+    <br>
+    <form id="RemoveUser">
+        Username: <input type="text" name="username" required><br>
+        <input type="button" class = "button" onclick="removeUser()" value="Remove"> <br> <br>
+        <input id= "turnmenu2" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="UpdateUserMainScreen">
+    <h4>Write the username of the account that you want to update. </h4>
+    <br>
+    <form id="UpdateMain">
+        Username: <input type="text" name="username" required><br>
+        <input type="button" class = "button" onclick="updateUser()" value="Update"> <br> <br>
+        <input id= "turnmenu3" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="SendMessageUser">
+    <h4> Write your message.</h4>
+    <br>
+    <form id="SendUser">
+        Title: <input type="text" name="title" required><br>
+        Message: <input type="text" name="message" required><br>
+        Receiver: <input type="text" name="receiver"><br>
+        <input id= "sendbutton" class = "button" type="button" onclick="sendMessage(false)" value="Submit"> <br> <br>
+        <input id= "turnmenu5" class = "button" type="button" onclick="callUserButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="SendMessageAdmin">
+    <h4> Write your message.</h4>
+    <br>
+    <form id="SendAdmin">
+        Title: <input type="text" name="title" required><br>
+        Message: <input type="text" name="message" required><br>
+        Receiver: <input type="text" name="receiver"><br>
+        <input id= "sendbuttonAdmin" class = "button" type="button" onclick="sendMessage(true)" value="Submit"> <br> <br>
+        <input id= "turnmenu6" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="DeleteMessageAdminButtons">
+    <h4>Which one would you like to delete a message in?</h4>
+    <br>
+    <form id="DeleteAdmin">
+        <input id= "input" type="button" class = "button" onclick="deleteMessage(true, 'in')" value="Delete from Inbox">
+        <input id= "output" type="button" class = "button" onclick="deleteMessage(true, 'out')" value="Delete from Outbox"> <br> <br>
+        <input id= "turnmenu7" class = "button" type="button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="DeleteMessageUserButtons">
+    <h4>Which one would you like to delete a message in?</h4>
+    <br>
+    <form id="DeleteUser">
+        <input id= "inputUser" type="button" class = "button" onclick="deleteMessage(false, 'in')" value="Delete from Inbox">
+        <input id= "outputUser" type="button" class = "button" onclick="deleteMessage(false, 'out')" value="Delete from Outbox"> <br> <br>
+        <input id= "turnmenu8" type="button" class = "button"  onclick="callUserButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="DeleteMessageByIdAdmin">
+    <h4>Write the id of the message which you want to delete.</h4>
+    <br>
+    <form id="DeleteMessageAdmin">
+        Message id: <input type="number" name="messageId" required> <br> <br>
+        <input id= "deleteIdAdmin" type="button" class = "button" onclick="deleteOperation(true)" value="Submit"> <br> <br>
+        <input id= "turnmenu9" type="button" class = "button" onclick="callAdminButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<div id="DeleteMessageByIdUser">
+    <h4>Write the id of the message that you want to delete. (You can see your messages below.)</h4>
+    <br>
+    <form id="DeleteMessageUser">
+        Message id: <input type="number" name="messageId" required><br>
+        <input id= "deleteIdUser" type="button" class = "button" onclick="deleteOperation(false)" value="Submit"> <br> <br>
+        <input id= "turnmenu10" type="button" class = "button" onclick="callUserButtons()" value="Turn back to menu">
+    </form>
+</div>
+
+<ul id="Data">
+
+</ul>
+<div id="userTable">
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Id</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Gender</th>
+        <th>email</th>
+        <th>City</th>
+        <th>Date of Birth</th>
+        <th>IsAdmin</th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+</div>
+
+<div id="messageTable">
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Id</th>
+        <th>Title</th>
+        <th>Message</th>
+        <th>Sender</th>
+        <th>Receiver</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+
+    <tbody id="myMessageTable">
+
+    </tbody>
+</table>
+</div>
+<p id="inputdata"></p>
+
+<script>
+    let url = "http://localhost:8080/api";
+    let clientToken = localStorage.getItem("token");
+    let valid = true;
+    const sendHttpRequest = function (method, url, data) {
+        const promise = new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.responseType = 'json'
+            xhr.onload = function (){
+                if(xhr.status >= 200 && xhr.status <= 300){
+                    resolve(xhr.response);
+                }
+                else{
+                    reject(xhr)
+                }
+            };
+            if(data){
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("Authorization", clientToken);
+            }
+            xhr.send(JSON.stringify(data));
+        });
+        return promise
+    }
+    restartControl()
+    if(!valid){
+        localStorage.setItem("token", " ");
+    }
+    clear();
+    var thisUsernamepassword = "";
+    var usernametobeUpdated = "";
+    let InOut = false;
+    function loginFunction() {
+        //data = document.forms["loginForm"]["password"].value;
+        const input = document.forms["loginForm"];
+        const username = input["username"].value;
+        const password = input["password"].value;
+        sendHttpRequest("POST", "http://localhost:8080/api/user/login",
+            {
+                "username": username,
+                "password": password
+            }
+            ).then((data) => {
+                alert("Login Successfull!");
+                document.getElementById("username").innerHTML = "Hello "+ username;
+            document.getElementById("username").style.display = "block";
+                thisUsernamepassword = username;
+                clientToken = data.username.split(":::")[0];
+            document.getElementById("loginScreen").style.display = "none";
+            localStorage.setItem("token", clientToken);
+            if(data.username.split(":::")[1] === "admin"){
+                document.getElementById("AdminButtons").style.display = "block";
+                document.getElementById("buttonmenu").style.display = "block";
+            }
+            else{
+                document.getElementById("UserButtons").style.display = "block";
+                document.getElementById("buttonmenu").style.display = "block";
+            }
+
+        }).catch((message) => {
+            alert("There is no user with the given information!");
+        });
+    }
+    function getUsers() {
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        sendHttpRequest('GET', url+ "/user", "a").then((responseData) => {
+            if(document.getElementById("myTable").innerHTML === ""){
+                responseData.forEach(printData)
+                document.getElementById("userTable").style.display = "block";
+            }
+            else{
+                document.getElementById("myTable").innerHTML = "";
+                document.getElementById("userTable").style.display = "none";
+            }
+
+        })
+
+        function printData(obj) {
+            var row =
+           "<tr>"+
+            "<td>"+obj.id+"</td>"+
+            "<td>"+obj.username+"</td>"+
+            "<td>"+obj.name+"</td>"+
+            "<td>"+obj.surname+"</td>"+
+            "<td>"+obj.gender+"</td>"+
+            "<td>"+obj.email+"</td>"+
+            "<td>"+obj.city+"</td>"+
+            "<td>"+obj.dateofBirth+"</td>"+
+            "<td>"+obj.admin+"</td>"+
+        "</tr>"
+            document.getElementById("myTable").innerHTML += row;
+        }
+    }
+
+    function addUserScreen(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        clear()
+        document.getElementById("AddUserScreen").style.display = "block";
+        clearInput("AddUser");
+    }
+    function addUser() {
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        data = handleData("AddUser")
+        sendHttpRequest("POST", url + "/user", data).then((responseData) => {
+            alert("User "+ responseData.username + " created successfully");
+            callAdminButtons();
+        }).catch((xhr) => {
+            if(xhr.status === 405){
+                alert("Username has taken.")
+                clearInput("AddUser");
+            }
+            else if(xhr.status === 406){
+                alert("Email has taken");
+                clearInput("AddUser");
+            }
+        })
+    }
+
+    function removeUserScreen(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        clear()
+        document.getElementById("RemoveUserScreen").style.display = "block";
+        getUsers();
+    }
+
+    function removeUser(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        const input = document.forms["RemoveUser"];
+        const username = input["username"].value;
+        sendHttpRequest("DELETE", url+"/user?username="+username, "a").then((message) =>{
+                alert("User "+ username +" has deleted");
+                callAdminButtons()
+        }).catch((xhr) =>{
+            if(xhr.status === 405){
+                alert("There is no user with username: " + username);
+                clearInput("RemoveUser");
+            }
+            else if(xhr.status === 406){
+                alert("Root admin cannot be deleted.");
+                clearInput("RemoveUser");
+            }
+        })
+    }
+
+    function updateUserScreen(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        clear()
+        document.getElementById("UpdateUserMainScreen").style.display = "block";
+        clearInput("UpdateMain");
+
+    }
+
+    function updateUser(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        const input = document.forms["UpdateMain"];
+        const username = input["username"].value;
+        usernametobeUpdated = username;
+        sendHttpRequest("GET", url +"/user/?username=" + username, "a").then((obj) => {
+            let table = document.createElement("table");
+            let fieldsRow = table.insertRow();
+            fieldsRow.className = "bg-info";
+            let cell1 = fieldsRow.insertCell();
+            let cell2 = fieldsRow.insertCell();
+            let cell3 = fieldsRow.insertCell();
+            let cell4 = fieldsRow.insertCell();
+            let cell5 = fieldsRow.insertCell();
+            let cell6 = fieldsRow.insertCell();
+            let cell7 = fieldsRow.insertCell();
+            let cell8 = fieldsRow.insertCell();
+            let cell9 = fieldsRow.insertCell();
+            let cell10 = fieldsRow.insertCell();
+            cell1.style.color = "white";
+            cell2.style.color = "white";
+            cell3.style.color = "white";
+            cell4.style.color = "white";
+            cell5.style.color = "white";
+            cell6.style.color = "white";
+            cell7.style.color = "white";
+            cell8.style.color = "white";
+            cell9.style.color = "white";
+            cell10.style.color = "white";
+            cell1.textContent = "Id";
+            cell2.textContent = "Username";
+            cell3.textContent = "Password";
+            cell4.textContent = "Name";
+            cell5.textContent = "Surname";
+            cell6.textContent = "Gender";
+            cell7.textContent = "Email";
+            cell8.textContent = "City";
+            cell9.textContent = "Date of birth";
+            cell10.textContent = "Admin";
+
+            let valuesRow = table.insertRow();
+            for (let prop in obj) {
+                let cell = valuesRow.insertCell();
+                cell.textContent = obj[prop];
+            }
+            table.className = "table table-striped";
+            document.getElementById("Top").appendChild(table);
+            }
+        ).catch((xhr) =>{
+                alert("Username is not found.");
+            callAdminButtons();
+        })
+        document.getElementById("UpdateUserMainScreen").style.display = "none";
+        document.getElementById("UpdateUser").style.display = "block";
+        clearInput("Update");
+    }
+
+    function update(){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        data = handleData("Update")
+        let updateurl = url + "/user/"+usernametobeUpdated;
+        sendHttpRequest("PUT", updateurl, data).then((obj) =>{
+            alert("User " + usernametobeUpdated + " updated successfully.")
+            clear();
+            let table = document.createElement("table");
+            table.className = "table table-striped";
+
+            let fields = ["id", "username", "password", "name", "surname", "gender", "email", "city", "date of birth", "admin"];
+            for (let field of fields) {
+                let row = table.insertRow();
+                let cell1 = row.insertCell();
+                let cell2 = row.insertCell();
+                cell1.style.color = "blue";
+                cell1.textContent = field;
+                if(field === "date of birth"){
+                    field = "dateofBirth";
+                }
+                cell2.textContent = obj[field];
+            }
+            document.getElementById("Top").appendChild(table);
+            let btn = document.createElement("button");
+            btn.innerHTML = "Okay";
+            btn.addEventListener("click", callAdminButtons);
+            btn.id = "a";
+            btn.className = "button";
+            document.getElementById("Top").appendChild(btn);
+        }).catch((xhr) => {
+            if(xhr.status == 406){
+                alert("Root admin cannot be updated!")
+                clear();
+                callAdminButtons();
+            }
+            else if(xhr.status == 405){
+                alert("Email or Username has been used.")   
+            }
+            else{
+                alert("An error occured! (Check date field)")
+            }
+
+        })
+    }
+
+    function handleData(formname) {
+        const input = document.forms[formname];
+        const username = input["username"].value;
+        const password = input["password"].value;
+        const name = input["name"].value;
+        const surname = input["surname"].value;
+        const email = input["email"].value;
+        const city = input["city"].value;
+        if(formname === "Update"){
+            var birthdayInput = document.getElementById('birthdayUpdate');
+            var birthday = birthdayInput.value;
+            var gender = document.querySelector('input[name="genderUpdate"]:checked').value;
+            var admin = document.querySelector('input[name="adminUpdate"]:checked').value === 'yes';
+        }
+        else{
+            var birthdayInput = document.getElementById('birthdayAdd');
+            var birthday = birthdayInput.value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var admin = document.querySelector('input[name="admin"]:checked').value === 'yes';
+        }
+
+
+        var data = {
+            username: username,
+            password: password,
+            name: name,
+            surname: surname,
+            gender: gender,
+            email: email,
+            city: city,
+            dateofBirth: birthday,
+            admin: admin,
+        }
+        return data;
+    }
+
+    function inbox(boolin){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        if(boolin){
+            inorout = "inbox";
+        }
+        else{
+            inorout = "outbox"
+        }
+        sendHttpRequest('GET', url+ "/message/"+ inorout +"?username=" + thisUsernamepassword, "a").then((responseData) => {
+            if(document.getElementById("myMessageTable").innerHTML === ""){
+                responseData.forEach(printMessage)
+                document.getElementById("messageTable").style.display = "block"
+            }
+            else{
+                document.getElementById("myMessageTable").innerHTML = "";
+                document.getElementById("messageTable").style.display = "none";
+            }
+
+        })
+
+        function printMessage(data){
+            let date = "";
+            let time = "";
+            if (data.date){
+                date = data.date.split("T")[0];
+                time = data.date.split("T")[1].split(".")[0];
+            }
+
+            var row = "<tr>" +
+                "<td>" + data.id + "-)</td>" +
+                "<td>" + data.title + "</td>" +
+                "<td>" + data.message + "</td>" +
+                "<td>" + data.sender + "</td>" +
+                "<td>" + data.receiver + "</td>" +
+                "<td>" + date + "</td>" +
+                "<td>" + time + "</td>" +
+                "</tr>";
+                document.getElementById("myMessageTable").innerHTML += row;
+        }
+
+    }
+
+    function sendMessageUserScreen(isadmin){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        clear();
+        if(isadmin){
+            document.getElementById("SendMessageAdmin").style.display = "block";
+            clearInput("SendAdmin");
+        }
+        else{
+            document.getElementById("SendMessageUser").style.display = "block";
+            clearInput("SendUser");
+        }
+    }
+    function sendMessage(isadmin){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        let input;
+        if(isadmin){
+            input = document.forms["SendAdmin"];
+        }
+        else{
+            input = document.forms["SendUser"];
+        }
+        let sender = thisUsernamepassword;
+        const IstanbulDate = changeTimeZone(new Date(), 'Europe/Istanbul');
+        function changeTimeZone(date, timeZone) {
+            if (typeof date === 'string') {
+                return new Date(
+                    new Date(date).toLocaleString('en-US', {
+                        timeZone,
+                    }),
+                );
+            }
+
+            return new Date(
+                date.toLocaleString('en-US', {
+                    timeZone,
+                }),
+            );
+        }
+        data = {
+            sender: sender,
+            title:  input["title"].value,
+            message: input["message"].value,
+            receiver: input["receiver"].value,
+            date: IstanbulDate
+        }
+        sendHttpRequest("POST", url + "/message", data).then((responseData) => {
+            alert("Message has sent to " + data.receiver);
+            clear()
+            if(isadmin){
+                callAdminButtons()
+            }
+            else{
+                callUserButtons();
+            }
+        }).catch((xhr) => {
+            if(xhr.status === 404){
+                alert("No user with the username " + data.receiver);
+                if(isadmin){
+                    clearInput("SendAdmin")
+                }
+                else{
+                    clearInput("SendUser");
+                }
+            }
+            else{
+                alert("An unkown error occured");
+                clearInput("SendUser");
+                clearInput("SendAdmin");
+            }
+        })
+    }
+
+
+    function logout(){
+        clear();
+        thisUsernamepassword = "";
+        document.getElementById("loginScreen").style.display = "flex";
+        document.getElementById("username").style.display = "none";
+        clearInput("loginForm");
+        localStorage.setItem("token", " ");
+    }
+    function callAdminButtons(){
+        clear()
+        document.getElementById("buttonmenu").style.display = "block"
+        document.getElementById("AdminButtons").style.display = "block";
+
+    }
+
+    function callUserButtons(){
+        clear()
+        document.getElementById("buttonmenu").style.display = "block"
+        document.getElementById("UserButtons").style.display = "block";
+    }
+
+    function deleteMessageScreen(isAdmin){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        clear();
+        if(isAdmin){
+            document.getElementById("DeleteMessageAdminButtons").style.display = "block";
+            clearInput("DeleteAdmin")
+        }
+        else{
+            document.getElementById("DeleteMessageUserButtons").style.display = "block";
+            clearInput("DeleteUser")
+        }
+    }
+
+    function deleteMessage(isadmin, inorOut){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        if(inorOut === 'in'){
+            InOut = true;
+            inbox(true);
+            clear();
+            if(isadmin){
+                document.getElementById("DeleteMessageByIdAdmin").style.display = "block";
+            }
+            else{
+                document.getElementById("DeleteMessageByIdUser").style.display = "block";
+            }
+        }
+        else{
+            InOut = false;
+            clear()
+            if(isadmin){
+                document.getElementById("DeleteMessageByIdAdmin").style.display = "block";
+            }
+            else{
+                document.getElementById("DeleteMessageByIdUser").style.display = "block";
+            }
+            inbox(false);
+        }
+    }
+
+    function deleteOperation(isAdmin){
+        if(!control()){
+            alert("Your account is not valid!")
+            return;
+        }
+        let input;
+        let inboxOutbox = "";
+        let sendOrReceive;
+        if(isAdmin){
+            input = document.forms["DeleteMessageAdmin"];
+        }
+        else{
+            input = document.forms["DeleteMessageUser"];
+        }
+        let id = input["messageId"].value;
+        if(InOut){
+            sendOrReceive = true
+            inboxOutbox = "inbox";
+        }
+        else{
+            sendOrReceive = false
+            inboxOutbox = "outbox";
+        }
+        let FullUrl = ""
+        if(sendOrReceive){
+            FullUrl = url+ "/message/inbox?Id="+id +"&receiver="+thisUsernamepassword;
+        }
+        else{
+            FullUrl = url+ "/message/outbox?Id="+id +"&sender="+thisUsernamepassword;
+        }
+        sendHttpRequest("DELETE", FullUrl, "a").then((response) => {
+            alert("Message has deleted");
+            if(inboxOutbox === "inbox"){
+                inbox(true);
+                inbox(true);
+            }
+            else{
+                inbox(false);
+                inbox(false);
+            }
+        }).catch((response) => {
+            alert("There is no message with the id: " + id);
+        })
+
+    }
+
+    function clear(){
+        document.getElementById("buttonmenu").style.display = "none"
+        document.getElementById("Data").innerHTML = "";
+        document.getElementById("AdminButtons").style.display = "none";
+        document.getElementById("AddUserScreen").style.display = "none";
+        document.getElementById("RemoveUserScreen").style.display = "none";
+        document.getElementById("UpdateUserMainScreen").style.display = "none";
+        document.getElementById("UpdateUser").style.display = "none";
+        document.getElementById("Top").innerHTML = "";
+        document.getElementById("UserButtons").style.display = "none";
+        document.getElementById("SendMessageUser").style.display = "none";
+        document.getElementById("SendMessageAdmin").style.display = "none";
+        document.getElementById("DeleteMessageAdminButtons").style.display = "none";
+        document.getElementById("DeleteMessageUserButtons").style.display = "none";
+        document.getElementById("DeleteMessageByIdUser").style.display = "none";
+        document.getElementById("DeleteMessageByIdAdmin").style.display = "none";
+        document.getElementById("myTable").innerHTML = ""
+        document.getElementById("myMessageTable").innerHTML= ""
+        document.getElementById("messageTable").style.display = "none";
+        document.getElementById("userTable").style.display = "none";
+    }
+
+    function clearInput(formName) {
+        document.getElementById(formName).reset();
+    }
+
+    function control(){
+        sendHttpRequest('GET', url+"/user/?username=" + thisUsernamepassword, "a").then((response) => {
+            return true}).catch((response) =>{
+            logout();
+            return false;
+        })
+        return true;
+    }
+
+    function restartControl(){
+        sendHttpRequest("GET", url+"/user/control", "a").then((responseData) => {
+            document.getElementById("loginScreen").style.display = "none";
+            thisUsernamepassword = responseData.username;
+            document.getElementById("username").innerHTML = "Hello " + responseData.username;
+            if(responseData.name === "admin"){
+                document.getElementById("AdminButtons").style.display = "block";
+                document.getElementById("buttonmenu").style.display = "block";
+            }
+            else{
+                document.getElementById("UserButtons").style.display = "block";
+                document.getElementById("buttonmenu").style.display = "block";
+            }
+
+        }).catch((s) =>{
+            valid = false;
+        })
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>
