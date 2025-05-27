@@ -1,4 +1,4 @@
-## Solutions created for Linux oprating system
+## Solutions
 
 ### THE 1 
  - 98/100 
