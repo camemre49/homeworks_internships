@@ -13,7 +13,7 @@ public class Server
     public static void main(String[] args) {
         try
         {
-            DbFunctions db = new DbFunctions("Assignment1", "postgres", "M.hbG6zx");
+            DbFunctions db = new DbFunctions("maildb", "mailuser", "mailpassword");
             Connection conn = db.getConn();
             db.setConn(conn);
             db.createUserTable();
